@@ -19,10 +19,25 @@
   <div class="clear"></div>  
 
   <div id="product-loop">
-    {% for product in collection.products %}
-    {% include 'product-listing' %}
-    {% endfor %} 
+
+{% for product in collection.products %}
+          {% if product.options.last.size > 1 %}
+          {% assign colorList = ',' %}
+                {% for variant in product.variants %}
+                     {% capture compareColor %},{{variant.options.first}},{% endcapture %}
+                        {% if colorList contains compareColor %}{% else %}
+                          {% include 'product-listing2' with collection.handle %}
+                          {% capture tempList %}{{colorList}}{{variant.options.first}},{% endcapture %}
+                          {% assign colorList = tempList %}
+                    {% endif %}
+                {% endfor %}
+          {% else %}
+              {% include 'product-listing' with collection.handle %}
+          {% endif %}
+{% endfor %}
+
   </div>
+
 </div>
 
 
