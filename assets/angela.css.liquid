@@ -1,0 +1,69 @@
+#about  h1, #about h2{
+	font-family:'Futura', sans-serif;
+	text-transform: capitalize;
+	font-size: 2em;
+	mar
+}
+
+#about h3{
+	font-family: 'Adobe Caslon Pro', serif;
+	font-style: italic;
+	font-size: 1.8em;
+}
+
+#about p{
+	font-family: 'Avenir Next', sans-serif;
+	font-size: 1.3em;
+	line-height: 1.7em;
+}
+
+#who {
+	font-size: 1.5em;
+	line-height: 2em;
+}
+
+#about .section{
+	margin: 0 0 25px;
+	/*clear: both;*/
+}
+
+#about img{
+	margin: 0 0 25px;
+}
+
+#video{
+	height: 315px;
+}
+
+/* larger than tablet */
+
+@media screen and (min-width: 739px){
+
+	#introtext{
+		position: absolute;
+		top: 55px;
+		left: 25px
+	}
+
+	#video{
+		width: 100%;
+		height: 315px;
+	}
+}
+
+
+@media screen and (min-width: 500px) and (max-width: 739px) {
+	#video{
+		width: 470px;
+		height: 264px;
+	}
+}
+
+
+@media screen and (max-width: 500px) {
+	#video{
+		width: 293.75px;
+		height: 165px;
+	}
+}
+
